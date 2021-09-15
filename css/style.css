@@ -960,6 +960,17 @@ body {
 #nexmoe-header .nexmoe-widget-wrap:first-child {
   margin-top: 0;
 }
+#nexmoe-header .nexmoe-time {
+  padding: 0 30px;
+  text-align: center;
+  color: #777;
+  white-space: normal;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+#nexmoe-header .nexmoe-time number {
+  color: #d1744f;
+}
 #nexmoe-header .nexmoe-copyright {
   padding: 0 30px;
   text-align: center;

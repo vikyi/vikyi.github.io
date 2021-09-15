@@ -21,9 +21,9 @@
 <meta property="article:author" content="vikyi">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1631610898412">
+    <link rel="stylesheet" href="/css/style.css?v=1631700346564">
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1631610898412">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1631700346564">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -97,6 +97,15 @@
     
     
   <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/%E5%90%B9%E6%B0%B4/" style="font-size: 10px;">吹水</a>
+    </div>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章分类</h3>
     <div class="nexmoe-widget">
 
@@ -122,16 +131,45 @@
 
 
     
-    
-  <div class="nexmoe-widget-wrap">
-    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/%E5%90%B9%E6%B0%B4/" style="font-size: 10px;">吹水</a>
-    </div>
-    
-  </div>
-
-    
 </aside>
+	<div class="nexmoe-time">
+	<span>本站于 2021 年 9 月 13 日创建</span>
+	<br>
+	<br>
+	<span>已运行 </span><number><span id="timeDate">载入天数...</span></number><span> 天 </span>
+	<number><span id="timeHours">载入时...</span></number><span> 小时 </span>
+	<number><span id="timeMinutes">载入分...</span></number><span> 分 </span>
+	<number><span id="timeSeconds">载入秒...</span></number><span> 秒</span>
+	<script>
+    var now = new Date();
+		function createtime() {
+			var grt = new Date("09/13/2021 22:04:30"); //此处修改你的建站时间或者网站上线时间 
+			now.setTime(now.getTime() + 250);
+			days = (now - grt) / 1000 / 60 / 60 / 24;
+			dnum = Math.floor(days);
+			hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+			hnum = Math.floor(hours);
+			if (String(hnum).length == 1) {
+				hnum = "0" + hnum;
+			}
+			minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+			mnum = Math.floor(minutes);
+			if (String(mnum).length == 1) {
+				mnum = "0" + mnum;
+			}
+			seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			snum = Math.round(seconds);
+			if (String(snum).length == 1) {
+				snum = "0" + snum;
+			}
+			document.getElementById("timeDate").innerHTML = dnum;
+			document.getElementById("timeHours").innerHTML = hnum;
+			document.getElementById("timeMinutes").innerHTML = mnum;
+			document.getElementById("timeSeconds").innerHTML = snum;
+		}
+		setInterval("createtime()", 250);
+	</script>
+	</div>
     <div class="nexmoe-copyright">
         &copy; 2021 vikyi
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
@@ -187,7 +225,7 @@
 
  
 
-<script async src="/js/app.js?v=1631610898413"></script>
+<script async src="/js/app.js?v=1631700346565"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
