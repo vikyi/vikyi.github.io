@@ -811,7 +811,7 @@ body {
   transition: transform 1.5s ease-out;
 }
 #nexmoe-header .nexmoe-avatar {
-  margin: 25px, 45px;
+  margin: 25px 45px;
   z-index: 4;
   position: relative;
   font-size: 0;
