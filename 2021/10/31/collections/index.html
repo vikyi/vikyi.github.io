@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>集合类学习记录 - vikyi&#39;s shelter</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="大概是集合类的综合记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合类学习记录">
+<meta property="og:url" content="https://vikyi.github.io/2021/10/31/collections/index.html">
+<meta property="og:site_name" content="vikyi&#39;s shelter">
+<meta property="og:description" content="大概是集合类的综合记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-31T14:57:42.000Z">
+<meta property="article:modified_time" content="2021-10-31T15:03:12.377Z">
+<meta property="article:author" content="vikyi">
+<meta property="article:tag" content="集合">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1635692795965">
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1635692795965">
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="vikyi" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="vikyi">
+            <img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi" alt="vikyi">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>4</div>
+        <div><span>标签</span>5</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:vikyi.github.io" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/3838237" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/%E5%90%B9%E6%B0%B4/" style="font-size: 10px;">吹水</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E7%B1%BB/" style="font-size: 10px;">常用类</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">技术</a> <a href="/tags/%E7%88%B1%E5%A5%BD/" style="font-size: 10px;">爱好</a> <a href="/tags/%E9%9B%86%E5%90%88/" style="font-size: 10px;">集合</a>
+    </div>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Java/">Java</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/正确的废话/">正确的废话</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/音视频处理/">音视频处理</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+</aside>
+	<div class="nexmoe-time">
+	<span>本站于 2021 年 9 月 13 日创建</span>
+	<br>
+	<br>
+	<span>已运行 </span><number><span id="timeDate">载入天数...</span></number><span> 天 </span>
+	<number><span id="timeHours">载入时...</span></number><span> 小时 </span>
+	<number><span id="timeMinutes">载入分...</span></number><span> 分 </span>
+	<number><span id="timeSeconds">载入秒...</span></number><span> 秒</span>
+	<script>
+    var now = new Date();
+		function createtime() {
+			var grt = new Date("09/13/2021 22:04:30"); //此处修改你的建站时间或者网站上线时间 
+			now.setTime(now.getTime() + 250);
+			days = (now - grt) / 1000 / 60 / 60 / 24;
+			dnum = Math.floor(days);
+			hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+			hnum = Math.floor(hours);
+			if (String(hnum).length == 1) {
+				hnum = "0" + hnum;
+			}
+			minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+			mnum = Math.floor(minutes);
+			if (String(mnum).length == 1) {
+				mnum = "0" + mnum;
+			}
+			seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			snum = Math.round(seconds);
+			if (String(snum).length == 1) {
+				snum = "0" + snum;
+			}
+			document.getElementById("timeDate").innerHTML = dnum;
+			document.getElementById("timeHours").innerHTML = hnum;
+			document.getElementById("timeMinutes").innerHTML = mnum;
+			document.getElementById("timeSeconds").innerHTML = snum;
+		}
+		setInterval("createtime()", 250);
+	</script>
+	</div>
+    <div class="nexmoe-copyright">
+        &copy; 2021 vikyi
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 56.31944444444444%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg" data-sizes="auto" alt="集合类学习记录" class="lazyload">
+              <h1>集合类学习记录</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月31日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.9k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 12 分钟</a>
+</div>
+
+      
+
+      <p>大概是集合类的综合记录</p>
+<span id="more"></span>
+
+<p>集合分为单列集合和双列集合，单列集合有<strong>List</strong>和<strong>Set</strong>，双列集合有<strong>Map</strong><br>其中List<strong>可以</strong>重复，具体细分有ArrayList和LinkedList等<br>Set<strong>不可以</strong>重复，具体细分有HashSet和TreeSet等<br>Map细分有HashMap等<br>Collection集合是单例集合的顶层接口，它表示一组对象，这些对象也成为Collection的元素<br>JDK不提供Collection接口的任何实现，提供更具体的子接口（如List和Set）的实现</p>
+<h1 id="Collection（单列集合）接口"><a href="#Collection（单列集合）接口" class="headerlink" title="Collection（单列集合）接口"></a>Collection（单列集合）接口</h1><p>常用方法有：<br>　　<code>boolean add(E e)</code>：添加元素，返回值总是为True<br>　　<code>boolean remove(Object o)</code>：删除指定元素，返回是否删除成功<br>　　<code>int size()</code>：返回集合中的元素个数<br>　　<code>void clear()</code>：清空集合中的元素<br>　　<code>boolean contains(Object o)</code>：判断集合是否存在指定元素<br>　　<code>boolean isEmpty()</code>：判断集合是否为空</p>
+<p>Collection的遍历使用Iterator迭代器，Iterator是通过集合的Iterator()方法得到的<br>　　<code>E next()</code>：返回迭代中的下一个元素<br>　　<code>boolean hasNext()</code>：如果迭代有更多元素，返回true</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">c.add(<span class="string">&quot;java&quot;</span>);</span><br><span class="line">System.out.println(c); <span class="comment">//[java]</span></span><br><span class="line">Iterator&lt;String&gt; it = c.iterator();</span><br><span class="line">System.out.println(it.next()); <span class="comment">//java</span></span><br></pre></td></tr></table></figure>
+<p>　　调用next()方法过头会抛出NoSuchElementException表示被请求的元素不存在；所以需要hasNext()方法判断是否还有元素：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(it.hasNext())&#123; <span class="comment">//true</span></span><br><span class="line">    System.out.println(it.next()); <span class="comment">//java</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(it.hasNext())&#123; <span class="comment">//false</span></span><br><span class="line">    System.out.println(it.next());</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;没有元素了&quot;</span>); <span class="comment">//没有元素了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用While循环即可轻松遍历Collection：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    System.out.println(it.next()); <span class="comment">//java</span></span><br><span class="line">    String s = it.next(); <span class="comment">//一般会用String格式接收集合中的元素以便可能会有的后续操作</span></span><br><span class="line">    <span class="comment">//···字符串处理等</span></span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><ul>
+<li>有序集合（也成为序列），用户可以通过精确控制列表中每个元素的插入位置，可以通过整数索引访问元素并搜索列表中的元素</li>
+<li>与Set不同，List通常允许重复的元素</li>
+</ul>
+<p>List类特有方法：（因为有序所以可以用整数索引）<br>　　<code>void add(int index, E element)</code>：添加元素到指定位置<br>　　<code>E remove(int index)</code>：删除指定索引处的元素，返回被删除元素<br>　　<code>E set(int index, E element)</code>：修改指定索引处的元素，返回被修改元素<br>　　<code>E get(index)</code>：返回指定索引处的元素
+　　</p>
+<h3 id="Iterator迭代器"><a href="#Iterator迭代器" class="headerlink" title="Iterator迭代器"></a>Iterator迭代器</h3><p>List的遍历：</p>
+<ul>
+<li>通过size()方法返回个数，然后用for循环</li>
+<li> 直接使用Iterator迭代器遍历；</li>
+<li> 增强for循环（其实等同于第二点）</li>
+<li> 使用ListIterator专用迭代器遍历（好处是可以遍历时添加元素）</li>
+</ul>
+<p>　　如果使用迭代器遍历，遍历中不能调用[list].add()方法添加元素，会抛出ConcurrentModificationException，即并发修改异常，因为元素长度被修改后，迭代器获取元素中判断预期修改值与实际修改值不符，所以如果涉及遍历的时候添加元素，还是必须用for循环/ListIterator迭代器。</p>
+<h4 id="ListIterator迭代器"><a href="#ListIterator迭代器" class="headerlink" title="ListIterator迭代器"></a>ListIterator迭代器</h4><p>List的遍历还可以用专用迭代器ListIterator，可以沿任意方向遍历，也可以修改列表<br>　　<code>E next()</code>：返回迭代中的下一个元素<br>　　<code>boolean hasNext()</code>：如果迭代有更多元素，返回true<br>　　<code>E previous()</code>：返回迭代中的下一个元素<br>　　<code>boolean hasPrevious()</code>：如果迭代有更多元素，返回true<br>　　<font color=#FF0000><code>void add(E e)</code>：将指定的元素插入列表（使用ListIterator迭代器的add()方法添加元素，不会造成并发修改异常</font>
+　　</p>
+<h4 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h4><p>　　题外话：增强for循环，内部原理是一个Iterator迭代器（所以不能add()添加元素，会发生并发修改异常）<br>　　格式： for(元素数据类型 变量名：数组或者Collection集合){<br>　　    //在此处使用变量即可，该变量就是元素<br>　　}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"><span class="comment">//4</span></span><br><span class="line"><span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h3><p>首先要了解数组与链表的数据结构：</p>
+<p><strong>数组</strong>：数组是一种<font color=#FF0000>查询快，增删慢</font>的模型<br>　　查询数据通过索引定位，查询任意数据耗时相同，<font color=#FF0000>查询效率高</font><br>　　删除数据时，要将原始数据删除，同时后面每个数据前移，<font color=#FF0000>删除效率低</font><br>　　添加数据时，添加位置后的每个数据后移，再添加元素，<font color=#FF0000>添加效率极低！</font><br>　<br><strong>链表</strong>：链表是一种<font color=#FF0000>增删快，查询慢</font>的模型<br>　　查询数据时必须从头结点开始查询，直到查询到想要的数据/查完全部数据，<font color=#FF0000>查询效率低</font><br>　　删除数据时，只要将原始数据的前一个结点的后指针直接指向后一个结点，后一个结点的前指针直接指向前一个结点，即可删除该结点数据，<font color=#FF0000>删除效率高</font><br>　　添加数据时，只要将原始数据的后指针向新的结点，后一个结点的前指针也指向新的结点，即可添加一个结点数据，<font color=#FF0000>添加效率高</font></p>
+<p>了解了这些之后很容易区分ArrayList与LinkedList的区别与优劣~</p>
+<h3 id="LinkedList类"><a href="#LinkedList类" class="headerlink" title="LinkedList类"></a>LinkedList类</h3><p>LinkedList类特有方法：<br>　　<code>void addFirst(E e)</code>：在该列表的开头插入指定的元素<br>　　<code>void addLst(E e)</code>：在该列表的末尾插入指定的元素<br>　　<code>E getFirst()</code>：返回此列表的第一个元素<br>　　<code>E getLast()</code>：返回此列表的最后一个元素<br>　　<code>E removeFirst()</code>：从此列表中删除并返回第一个元素<br>　　<code>E removeLast()</code>：从此列表中删除并返回最后一个元素</p>
+<h2 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h2><ul>
+<li>不包含重复元素的集合</li>
+<li>没有带索引的方法，所以不能使用普通for循环遍历<br>　　HashSet对集合的迭代顺序不作任何保证（即不保证存储和取出的元素顺序一致），因为不包含重复元素，当添加重复元素时会跳过添加</li>
+</ul>
+<p>　　哈希值：是JDK根据对象的地址或者字符串或者数字算出来的int类型的数值<br>Object类中有一个方法可以获取对象的哈希值<br>　　<code>public int hashCode()</code>：返回对象的哈希码值<br>　　同一个对象多次返回hashCode必相同，默认情况下，不同对象返回hashCode是不相同的，但是通过方法重写，可以使不同对象返回相同的hashCode</p>
+<h3 id="HashSet类"><a href="#HashSet类" class="headerlink" title="HashSet类"></a>HashSet类</h3><p>　　底层是哈希表，哈希表是数组结构，在JDK8之前，底层采用数组+链表实行，可以说是一个元素是链表的数组，在JDK8以后，发生hash碰撞时，java 1.7 会在链表的头部插入，而java 1.8会在链表的尾部插入，且如果链表的长度超过了8，那么链表将转换为红黑树<br>当HashSet添加元素时：</p>
+<ol>
+<li>首先调用对象的HashCode()方法计算哈希值；</li>
+<li>然后根据对象的哈希值计算对象的存储位置，如果该位置没有元素，存储元素；</li>
+<li>如果有元素，就遍历该位置的所有元素比较哈希值，如都不同，则添加元素；</li>
+<li>如有相同，调用equals()方法比较内容是否相同，返回true则表明是相同元素，不予添加；</li>
+<li>返回false则执行添加元素<br><font color=#FF0000>所以HashSet存储元素，要保证元素的唯一性，需要重写对象的HashCode()和equals()方法</font></li>
+</ol>
+<h4 id="LinkedHashSet类"><a href="#LinkedHashSet类" class="headerlink" title="LinkedHashSet类"></a>LinkedHashSet类</h4><p>　　是由哈希表和链表实现的Set接口，具有<font color=#FF0000>可预测的迭代次序</font>（由链表保证元素有序，也就是说元素的存储和取出顺序是一致的），同时继承了Set接口的不可重复
+　　</p>
+<h3 id="TreeSet类"><a href="#TreeSet类" class="headerlink" title="TreeSet类"></a>TreeSet类</h3><p>　　元素有序，这里的顺序指的是<font color=#FF0000>按照一定的规则排序，具体排序方式取决于构造方法，具体如下：</font></p>
+<ul>
+<li>TreeSet()：根据元素的自然排序进行排序（升序）；</li>
+<li>TreeSet(Comparator comparator)：根据指定的比较器进行排序</li>
+</ul>
+<p>　　<font color=#FF0000>如果想要一个类的对象添加进TreeSet实现自然排序（即第一种），该类必须实现Comparable&lt;T&gt;接口，即重写int compareTo(E e)方法，该方法返回负整数，0，正整数用来表示小于，等于，大于指定对象，所以重写时需要return -1/1，若为return 0，则TreeSet只能存储一个元素，后续都是”等于”对象，即重复对象，不予添加。</font><br>如：一个类需要按年龄排序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">People</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">People</span>&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="comment">//··· 省略无参/有参构造，省略getter&amp;setter方法</span></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(People p)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="keyword">this</span>.age - p.age; <span class="comment">// 因为写在类内，this可以指代调用该方法的对象，即A.compareTO(B),this就是A，p就是B</span></span><br><span class="line">        <span class="keyword">int</span> num2 = num == <span class="number">0</span> ? <span class="keyword">this</span>.name.compareTO(p.name) : num;</span><br><span class="line">        <span class="keyword">return</span> num2; <span class="comment">// 如省略上面一行直接返回num，则当age相同时，即使name不同，元素也会被判断成相等，所以必须添加一个判断</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然，也可以使用第二种，直接传入一个Comparator对象进行排序，本质上只是比较方法写在类里还是单独一个比较器里的区别：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">TreeSet&lt;People&gt; ts = <span class="keyword">new</span> TreeSet(<span class="keyword">new</span> comparator&lt;People&gt;()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(People p1, People p2)</span></span>&#123; <span class="comment">// 因为写在类外，需要传入两个对象进行比较</span></span><br><span class="line">        <span class="keyword">int</span> num = p1.getAge() - p2.getAge(); <span class="comment">// 因为是写在类外，需要使用get()方法获取</span></span><br><span class="line">        <span class="keyword">int</span> num2 = num == <span class="number">0</span> ? p1.getName().compareTo(p2.getName()) : num;</span><br><span class="line">        <span class="keyword">return</span> num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Map接口（双列集合）接口"><a href="#Map接口（双列集合）接口" class="headerlink" title="Map接口（双列集合）接口"></a>Map接口（双列集合）接口</h1><p>　　Interface Map&lt;K,V&gt; K：键的类型； V：值的类型<br>　　将键映射到值的对象，不能包含重复的键，每个键可以映射到最多一个值<br>　　<br>　　具体可分为HashMap和TreeMap类等；<br>　　<br>常用方法有：<br>　　<code>V put(K key, V value)</code>：将指定的值与该映射中的指定键相关联（键重复时会覆盖值）<br>　　<code>V remove(Object key)</code>：根据键删除键值对元素，返回该键值对的值<br>　　<code>void clear()</code>：移除所有的键值对元素<br>　　<code>boolean containsKey(Object key)</code>：判断集合是否包含指定的键<br>　　<code>boolean containsValue(Object value)</code>：判断集合是否包含指定的值<br>　　<code>boolean isEmpty()</code>：判断集合是否为空<br>　　<code>int size()</code>：集合的长度，也就是集合中键值对的个数<br>　　<br>Map的获取：<br>　　<code>V get(Object key)</code>：根据键获取值<br>　　<code>Set&lt;K&gt; keySet()</code>：获取所有键的集合（键不可重复，所以用Set）<br>　　<code>Collection&lt;V&gt; values()</code>：获取所有值的集合（值可以重复，所以用Collection）<br>　　<font color=#FF0000><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>：获取所有键值对对象的集合</font><br>　　<br>Map的遍历：</p>
+<ul>
+<li>方法一：</li>
+</ul>
+<ol>
+<li>使用keySet()方法获取所有键的集合；</li>
+<li>再用Iterator/增强for循环遍历该Set；</li>
+<li>使用get()方法获取每一个键的对应值；</li>
+</ol>
+<ul>
+<li>方法二：</li>
+</ul>
+<ol>
+<li>使用entrySet()方法直接获取所有键值对对象的集合</li>
+<li>再用Iterator/增强for循环遍历该Set获取每一个Map.Entry对象；</li>
+<li>使用getKey()方法得到每一个键值对的键，getValue()方法得到值；</li>
+</ol>
+<h1 id="Collections工具类"><a href="#Collections工具类" class="headerlink" title="Collections工具类"></a>Collections工具类</h1><p>　　Collections类是针对集合操作的工具类<br>　　<br>常用方法有：<br>　　<code>public static &lt;T extends Comparable&lt;?super T&gt;&gt; void sort(List&lt;T&gt; list)</code>：将指定的列表按升序排序<br>　　<code>public static void reverse(List&lt;?&gt; list)</code>：反转指定列表中元素的顺序<br>　　<code>public static void shuffle(List&lt;?&gt; list)</code>：使用默认的随即源随机排列指定的列表</p>
+<p><font color=#FF0000>注：自定义类使用sort时需和TreeSet一样继承Comparable接口（重写CompareTo()方法）或者添加Comparator比较器参数）</font></p>
+<p>题外话：&lt;&gt;中的?extends/super表示泛型类的上限/下限类<br>当需要将List”等分”时，可以用if判断取余来等分</p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>vikyi<br>
+        <strong>本文链接：</strong><a href="https://vikyi.github.io/2021/10/31/collections/" title="https:&#x2F;&#x2F;vikyi.github.io&#x2F;2021&#x2F;10&#x2F;31&#x2F;collections&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;vikyi.github.io&#x2F;2021&#x2F;10&#x2F;31&#x2F;collections&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/Java/">Java</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1635692795969"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>
