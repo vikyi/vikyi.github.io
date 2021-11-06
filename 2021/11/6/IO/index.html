@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>IO流学习记录 - vikyi&#39;s shelter</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="有关IO流的记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IO流学习记录">
+<meta property="og:url" content="https://vikyi.github.io/2021/11/6/IO/index.html">
+<meta property="og:site_name" content="vikyi&#39;s shelter">
+<meta property="og:description" content="有关IO流的记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-06T08:13:47.000Z">
+<meta property="article:modified_time" content="2021-11-06T08:28:07.469Z">
+<meta property="article:author" content="vikyi">
+<meta property="article:tag" content="IO流">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1636190445098">
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1636190445098">
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="vikyi" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="vikyi">
+            <img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi" alt="vikyi">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>6</div>
+        <div><span>标签</span>5</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/3838237" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/IO%E6%B5%81/" style="font-size: 10px;">IO流</a> <a href="/tags/%E5%90%B9%E6%B0%B4/" style="font-size: 20px;">吹水</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E7%B1%BB/" style="font-size: 10px;">常用类</a> <a href="/tags/%E7%88%B1%E5%A5%BD/" style="font-size: 20px;">爱好</a> <a href="/tags/%E9%9B%86%E5%90%88%E7%B1%BB/" style="font-size: 10px;">集合类</a>
+    </div>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Java/">Java</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/正确的废话/">正确的废话</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/音视频处理/">音视频处理</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+</aside>
+	<div class="nexmoe-time">
+	<span>本站于 2021 年 9 月 13 日创建</span>
+	<br>
+	<br>
+	<span>已运行 </span><number><span id="timeDate">载入天数...</span></number><span> 天 </span>
+	<number><span id="timeHours">载入时...</span></number><span> 小时 </span>
+	<number><span id="timeMinutes">载入分...</span></number><span> 分 </span>
+	<number><span id="timeSeconds">载入秒...</span></number><span> 秒</span>
+	<script>
+    var now = new Date();
+		function createtime() {
+			var grt = new Date("09/13/2021 22:04:30"); //此处修改你的建站时间或者网站上线时间 
+			now.setTime(now.getTime() + 250);
+			days = (now - grt) / 1000 / 60 / 60 / 24;
+			dnum = Math.floor(days);
+			hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+			hnum = Math.floor(hours);
+			if (String(hnum).length == 1) {
+				hnum = "0" + hnum;
+			}
+			minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+			mnum = Math.floor(minutes);
+			if (String(mnum).length == 1) {
+				mnum = "0" + mnum;
+			}
+			seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			snum = Math.round(seconds);
+			if (String(snum).length == 1) {
+				snum = "0" + snum;
+			}
+			document.getElementById("timeDate").innerHTML = dnum;
+			document.getElementById("timeHours").innerHTML = hnum;
+			document.getElementById("timeMinutes").innerHTML = mnum;
+			document.getElementById("timeSeconds").innerHTML = snum;
+		}
+		setInterval("createtime()", 250);
+	</script>
+	</div>
+    <div class="nexmoe-copyright">
+        &copy; 2021 vikyi
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 56.31944444444444%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg" data-sizes="auto" alt="IO流学习记录" class="lazyload">
+              <h1>IO流学习记录</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月06日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
+</div>
+
+      
+
+      <p>有关IO流的记录</p>
+<span id="more"></span>
+
+<h2 id="前导："><a href="#前导：" class="headerlink" title="前导："></a>前导：</h2><p>先提一下File类：<br>File类的构造：<br>　　<code>File(String pathname)</code>：通过将给定的路径名字符串转换为抽象路径名字符串来创建新的File实例<br>　　<code>File(String parent, String child)</code>：从父路径名字符串和子路径名字符串创建新的File实例<br>　　<code>File(File parent, String child)</code>：从父抽奖路径名和子路径名字符串创建新的File实例</p>
+<p>File类的方法：<br>　　<code>public boolean createNewFile()</code>：当具有该名称的文件不存在时，创建一个由该抽象路径命名的新空文件<br>　　<code>public boolean mkdir()</code>：创建由此抽象路径命名的目录（最多往已存在的目录向下一层）<br>　　<code>public boolean mkdirs()</code>：创建由此抽象路径命名的目录，包括任何必须但不存在的父目录（可以向下自动建很多层）<br>　　<font color=#FF0000>这些方法都会在创建成功的时候返回true，在已有文件/目录/创建失败（特指使用mkdir()方法却想要创建多层目录时返回false，且createNewFile遇到存在同名的目录时，也会创建失败</font><br>　　<code>public boolean isDirectory()</code>：测试 此抽象路径名表示的File 是否为目录<br>　　<code>public boolean isFile()</code>：测试 此抽象路径名表示的File 是否为文件<br>　　<code>public boolean exists()</code>：测试 此抽象路径名表示的File 是否存在<br>　　<code>public String getAbsolutePath()</code>：返回 此抽象路径名的 绝对路径名字符串<br>　　<code>public String getPath()</code>：将此抽象路径名转换为路径名字符串<br>　　<code>public String getName()</code>：返回 此抽象路径名表示的 文件/目录的 名称<br>　　<code>public String[] list()</code>：返回 此抽象路径名表示的目录中的 文件和目录的 名称字符串数组<br>　　<code>public File[] listFiles()</code>：返回此抽象路径名表示的目录中的文件和目录的 File对象数组<br>　　<code>public boolean delete()</code>：删除 由此抽象路径名表示的文件/目录<font color=#FF0000>如删除目录，必须确保目录内没有文件</font></p>
+<p>遍历目录：</p>
+<ol>
+<li>根据给定的路径创建File对象</li>
+<li>定义方法用于获取目录下的全部内容，传入File参数，用于递归</li>
+<li>方法内编写方法体，用一个File[]数组存放listFiles()方法获取的File的全部内容</li>
+<li>遍历File[]数组，<font color=#FF0000>遍历前先确保File[]数组不为空，</font>得到每一个File对象</li>
+<li>判断每一个File对象是否为目录，如是目录，递归调用此方法，如是文件，格式化输出绝对路径等</li>
+</ol>
+<h2 id="IO流分类"><a href="#IO流分类" class="headerlink" title="IO流分类"></a>IO流分类</h2><ul>
+<li>按照数据的流向：<ul>
+<li>输入流：读数据</li>
+<li>输出流：写数据</li>
+</ul>
+</li>
+<li>按照数据的类型<ul>
+<li>字节流：基本单元为字节；通常用来处理二进制数据（可以处理任意数据），不支持直接写入或读取Unicode码元；默认不使用缓冲区</li>
+<li>字符流：基本单元为Unicode码元；通常处理文本数据，它支持写入及读取Unicode码元；使用缓冲区</li>
+</ul>
+</li>
+</ul>
+<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="输出字节流"><a href="#输出字节流" class="headerlink" title="输出字节流"></a>输出字节流</h4><p>输出字节流的构造：<br>　　<code>FileOutputStream(String name)</code>：创建文件输出流以指定的名称写入文件<br>　　<code>FileOutputStream(File file)</code>：创建文件输出流以指定的抽象路径名写入文件<br>该方法会做以下操作：</p>
+<ol>
+<li>调用系统功能创建文件</li>
+<li>创建字节输出流对象</li>
+<li>让字节输出流对象指向创建好的文件</li>
+</ol>
+<p>字节流的写方法（三种）：<br>　　<code>void write(int b)</code>：将指定的字节写入此文件输出流，一次写一个字节数据，int类型表示该数据的ASCII码<br>　　<code>void write(byte[] b)</code>：将b.length字节从指定的字节数组写入此文件输出流，一次写一个字节数组数据<br>　　<code>void write(byte[] b, int off, int len)</code>：将len字节从指定的数组开始，从偏移量off开始写入此文件输出流，一次写一个字节数组的部分数据（包括off位置，取len个）<br>联动：Byte[] getBytes()方法可以返回 字符串 对应的 byte[]数组，从而更方便地使用第二、三种方法写入</p>
+<p>小贴士：<br>需要换行时可以输入:</p>
+<ul>
+<li>Windows：”\r\n” .getBytes()</li>
+<li>Linux：”\n”</li>
+<li>Mac：”\r”</li>
+</ul>
+<p>需要追加写入：<br>　　在构造方法的时候在String name参数后面追加一个Boolean append参数，设置为true即可（默认不写就是false）<br>　　<font color=#FF0000>别忘了try-catch的时候在finally中使用close()方法释放资源</font><br>具体为：</p>
+<ol>
+<li>方法体定义FileOutputStream对象，赋默认值null</li>
+<li>try-catch中赋值，操作</li>
+<li>finally中调用close()方法</li>
+<li>因为当try失败时对象为null，所以close()也需要try-catch</li>
+<li>当对象不为null时close()即可</li>
+</ol>
+<p><font color=#FF0000>JDK7的改进方案：</font>try(括号中直接定义流对象)，不需要finally中手动关闭流了<br><font color=#FF0000>JDK9的改进方案：</font>try-catch前直接定义流对象，try(输入流对象；输出流对象)，依旧不需要手动关闭流</p>
+<h4 id="输入字节流"><a href="#输入字节流" class="headerlink" title="输入字节流"></a>输入字节流</h4><p>输入字节流的构造（同输出流）：<br>　　<code>FileInputStream(String name)</code>：创建文件输出流以指定的名称写入文件<br>　　<code>FileInputStream(File file)</code>：创建文件输出流以指定的抽象路径名写入文件</p>
+<p>字节流读方法：<br>　　<code>int read()</code>：从该输入流中读取一个字节数据，int类型表示该数据的ASCII码，可以用(char)强制类型转换，如果达到文件的末尾，会返回-1<br>　　因此，可以用while循环判断读数据是否为-1遍历读文件<br>　　<code>int read(byte[] b)</code>：从该输入流中读取最多b.length个字节的数据到一个字节数组，如最后没有那么多字节，则返回读到的字节数，换行符占两个字节<br>　　<code>int read(byte[] b, int off, int len)</code>：从该输入流中读取最多len个字节的数据到字节数组<br>demo：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">文件内容：</span></span><br><span class="line"><span class="comment">abcde（换行）</span></span><br><span class="line"><span class="comment">abcde（换行）</span></span><br><span class="line"><span class="comment">abcde（换行）</span></span><br><span class="line"><span class="comment">（空行）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line"><span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"><span class="keyword">while</span> ((len = fis.read(b)) != -<span class="number">1</span>) &#123;</span><br><span class="line">    System.out.println(<span class="keyword">new</span> String(b, <span class="number">0</span>, len));<span class="comment">//这里可以写一个写入操作用来实现文件复制等处理</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">如果要按字节读的话</span></span><br><span class="line"><span class="comment">while ((len = fis.read()) != -1) &#123;</span></span><br><span class="line"><span class="comment">    System.out.println(len);</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line">fis.close();</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出（最后一行是换行得到的空行）：</span></span><br><span class="line"><span class="comment">abcde</span></span><br><span class="line"><span class="comment">abcde</span></span><br><span class="line"><span class="comment">abcde</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">--------</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字节缓冲流"><a href="#字节缓冲流" class="headerlink" title="字节缓冲流"></a>字节缓冲流</h3><ul>
+<li>BufferedOutputStream：缓冲输出流，优点：应用程序可以向底层输出流写入字节，不必因为每个写入的字节导致底层系统的调用</li>
+<li>BufferedInputStream：缓冲输入流，创建一个内部缓冲数组，当从流中读取或跳过字节时，内部缓冲区将根据需要，从包含的输入流中重新填充，一次很多字节</li>
+</ul>
+<p>构造方法：</p>
+<ul>
+<li>字节缓冲输出流：BufferedOutputStream(OutputStream out)</li>
+<li>字节缓冲输入流：BufferedInputStream(InputStream in)</li>
+</ul>
+<p>字节缓冲流仅提供缓冲区，不提供真正的读写操作，所以构造参数为输入/输出流对象，这里体现了装饰者的设计模式</p>
+<p>小贴士：<br>复制文件的四种方法：</p>
+<ol>
+<li>基本字节流一次读写一个字节（慢慢慢慢慢）</li>
+<li>基本字节流一次读写一个字节数组（较快）</li>
+<li>字节缓冲流一次读写一个字节（只比2慢一点）</li>
+<li>字节缓冲流一次读写一个字节数组（最快）</li>
+</ol>
+<h3 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h3><p>　　如果一个字节一个字节地读，汉字会被拆分，GBK编码下，一个汉字占2个字节，UTF-8编码下是3个<br>扩展：之前提到的String[]的getBytes()方法可以加charsetName参数，表示字符数组的编码<br>编码：<br>　　<code>byte[] getBytes()</code>：使用平台默认的字符集编码<br>　　<code>byte[] getBytes(String charsetName)</code>：使用指定的字符集将该String编码为一系列字节，将结果存储到新的字节数组中<br>解码：<br>　　<code>String(byte[] bytes)</code>：使用平台默认的字符集解码<br>　　<code>String(byte[] bytes, String charsetName)</code>：使用指定的字符集解码指定的字节数组来构造新的String</p>
+<p>字符流的编解码问题<br>InputStreamReader：字符输入流<br>OutputStreamWriter：字符输出流<br><font color=#FF0000>字符流的构造仍需要字节流</font></p>
+<h4 id="字符输出流"><a href="#字符输出流" class="headerlink" title="字符输出流"></a>字符输出流</h4><p>字符输出流的构造：<br>　　<code>OutputStreamWriter(OutputStream out)</code>：创建一个使用默认编码的OutputStreamWriter<br>　　<code>OutputStreamWriter(OutputStream out, String charsetName)</code>：创建一个使用明明字符集编码的OutputStreamWriter<br>InputStreamReader同理~</p>
+<p>字符流写方法（五种）：<br>　　<code>void write(int c)</code>：写一个字符<br>　　<code>void write(char[] cbuf)</code>：写一个字符数组<br>　　<code>void write(char[] cbuf, int off, int len)</code>：写字符数组的一部分<br>　　<code>void write(String str)</code>：写一个字符串<br>　　<code>void write(String str, int off, int len)</code>：写字符串的一部分<br>注意：字符流相当于缓冲区，特有的flush()方法可以刷新流（即将缓冲区写入文件），还可以接着写数据，close()方法释放资源前会自动刷新，且一个字符流只要不关闭，默认就是向缓冲区追加数据（源文件还是会被整个替换，想要实现源文件追加，还得在FileOutputStream中设置append参数为true）</p>
+<h4 id="字符输入流"><a href="#字符输入流" class="headerlink" title="字符输入流"></a>字符输入流</h4><p>字符输入流的构造（同输出流）：<br>　　<code>InputStreamReader(InputStream in)</code>：创建一个使用默认编码的InputStreamReader<br>　　<code>InputStreamReader(InputStream in, String charsetName)</code>：创建一个使用明明字符集编码的InputStreamReader<br>　　<br>字符流读方法（两种）：<br>　　<code>int read()</code>：一次读一个字符数据<br>　　<code>int read(char[] cbuf)</code>：一次读一个字符数组数据<br>读方法基本同字节流~</p>
+<p>扩展：因为字符流构造起来太麻烦，所以提供了包装类FileReader和FileWriter类，用于便捷地读写文件，<font color=#FF0000>坏处是只能使用默认编解码格式</font><br>构造方法：<br>　　<code>FileReader(String fileName)</code><br>　　<code>FileWriter(String fileName)</code>
+　　</p>
+<h3 id="字符缓冲流"><a href="#字符缓冲流" class="headerlink" title="字符缓冲流"></a>字符缓冲流</h3><ul>
+<li>BufferedWriter：字符缓冲输出流，缓冲字符，提供单个字符、数组和字符串的高效写入，可以指定缓冲区大小（默认大小8192，基本可以满足大多数用途）</li>
+<li>BufferedReader：字符缓冲输入流，缓冲字符，提供字符、数组和行的高效读取，可以指定缓冲区大小（默认大小8192，基本可以满足大多数用途）</li>
+</ul>
+<p>构造方法：</p>
+<ul>
+<li>字节缓冲输出流：BufferedWriter(Writer out)</li>
+<li>字节缓冲输入流：BufferedReader(Reader in)</li>
+</ul>
+<p><font color=#FF0000>字符缓冲流特有功能：</font><br>　　BufferedWriter：<code>void newLine()</code>：写一个行分隔符，分隔符由系统属性定义，具体见上”小贴士“<br>　　BufferedReader：<code>public String readLine()</code>：读一行文字，结果包含行的内容的字符串，不包括任何行终止字符（即换行符），如果流的结尾已经到达，则返回null，<font color=#FF0000>因为不包括换行符，所以输出时记得自己美化格式换行等</font></p>
+<h3 id="特殊操作流"><a href="#特殊操作流" class="headerlink" title="特殊操作流"></a>特殊操作流</h3><h4 id="标准输入输出流"><a href="#标准输入输出流" class="headerlink" title="标准输入输出流"></a>标准输入输出流</h4><p>　　<code>public static final InputStream in</code>：标准输入流。通常该流对应于键盘输入或由主机环境或用户指定的另一个输入源<br>　　<code>public static final PrintStream out</code>：标准输出流。通常该流对应于显示输出或由主机环境或用户指定的另一个输出目标<br>　　Scanner其实就是实现了键盘输入的包装类，底层还是标准输入流<br>　　“Sout”自然就是标准输出流</p>
+<h4 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h4><ul>
+<li>分类：<ul>
+<li>字节打印流：PrintStream</li>
+<li>字符打印流：PrintWriter</li>
+</ul>
+</li>
+</ul>
+<p>字节打印流的构造：<br>　　<code>PrintStream(String fileName)</code>：使用指定的文件名创建新的PrintStream<br>字节打印流的特有方法：<br>　　print()方法：与字节流的write()方法区别是不会识别成ASCII码，写什么就是什么<br>　　println()方法：与标准输出流相同，换行<br>　　<br>字符打印流的构造：<br>　　<code>PrintWriter(String fileName)</code>：使用指定的文件名创建新的PrintWriter，而且不需要自动刷新<br>　　<code>PrintWriter(Writer out, boolean autoFlush)</code>：out：字符输出流，autoFlush：如果为true，则println，printf或formar方法将刷新输出缓冲区
+　　</p>
+<h4 id="对象序列化流"><a href="#对象序列化流" class="headerlink" title="对象序列化流"></a>对象序列化流</h4><ul>
+<li>分类：<ul>
+<li>对象序列化流：ObjectOutputStream</li>
+<li>对象反序列化流：ObjectInputStream</li>
+</ul>
+</li>
+</ul>
+<p>序列化对象流的构造：<br>　　<code>ObjectOutputStream(OutputStream out)</code>：创建一个写入指定OutputStream的ObjectOutputStream</p>
+<p>序列化对象的方法：<br>　　<code>void writeObject(Object obj)</code>：将指定的对象写入ObjectOutputStream<br><font color=#FF0000>任何需要序列化的自定义类都需要继承Serializable接口（此接口仅作为标识接口，不用重写方法）</font></p>
+<p>反序列化对象流的构造：<br>　　<code>ObjectInputStream(InputStream in)</code>：创建从指定InputStream读取的ObjectInputStream</p>
+<p>反序列化对象的方法：<br>　　<code>Object readObject()</code>：从ObjectInputStream读取一个对象</p>
+<p>小贴士：</p>
+<ol>
+<li>通常一个类有以下变化后，已经序列化的对象不可被反序列化<br>　　- 串行版本不一致（可以通过手动设置serialVersionUID用final关键字固定）<br>　　- 包含未知属性<br>　　- 没有可访问的无参构造函数</li>
+<li>如果有成员变量不想被序列化可以添加transient关键字</li>
+</ol>
+<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><ul>
+<li>是一个Map体系的集合类<font color=#FF0000>（用法同Map，但是构造时不能指定泛型）</font></li>
+<li>可以保存到流中或从流中加载</li>
+</ul>
+<p>Properties的特有方法：<br>　　<code>Object setProperty(String key, String value)</code>：设置集合的键和值，都是String类型，底层调用HashTable方法put<br>　　<code>String getProperty(String key)</code>：使用此属性列表中指定的键搜索属性（类似Map的get）<br>　　<code>Set&lt;String&gt; stringPropertyNames()</code>：从该属性列表中返回一个不可修改的键集，其中键及其对应的值是字符串（类似Map的KeySet）<br>　　<br>Properties与IO流结合的方法：<br>　　<code>void load(InputStream inStream)</code><br>　　<code>void load(Reader reader)</code>：从输入字符流读取属性列表（键和元素对）<br>　　<code>void store(OutputStream out, String comments)</code><br>　　<code>void store(Writer writer, String comments)</code>：将此属性列表写入此Properties表中，以适合使用load(Reader)方法的格式写入输出字符流</p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>vikyi<br>
+        <strong>本文链接：</strong><a href="https://vikyi.github.io/2021/11/6/IO/" title="https:&#x2F;&#x2F;vikyi.github.io&#x2F;2021&#x2F;11&#x2F;6&#x2F;IO&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;vikyi.github.io&#x2F;2021&#x2F;11&#x2F;6&#x2F;IO&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/Java/">Java</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1636190445099"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>
