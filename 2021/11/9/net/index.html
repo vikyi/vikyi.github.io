@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>网络编程学习记录 - vikyi&#39;s shelter</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="网络编程的学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络编程学习记录">
+<meta property="og:url" content="https://vikyi.github.io/2021/11/9/net/index.html">
+<meta property="og:site_name" content="vikyi&#39;s shelter">
+<meta property="og:description" content="网络编程的学习记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-09T12:43:12.000Z">
+<meta property="article:modified_time" content="2021-11-21T12:08:30.805Z">
+<meta property="article:author" content="vikyi">
+<meta property="article:tag" content="基础学习">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1637575866708">
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1637575866708">
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="vikyi" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="vikyi">
+            <img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi" alt="vikyi">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>9</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/3838237" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/%E5%90%B9%E6%B0%B4/" style="font-size: 10px;">吹水</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">基础学习</a> <a href="/tags/%E7%88%B1%E5%A5%BD/" style="font-size: 10px;">爱好</a>
+    </div>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Java/">Java</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/正确的废话/">正确的废话</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/音视频处理/">音视频处理</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+</aside>
+	<div class="nexmoe-time">
+	<span>本站于 2021 年 9 月 13 日创建</span>
+	<br>
+	<br>
+	<span>已运行 </span><number><span id="timeDate">载入天数...</span></number><span> 天 </span>
+	<number><span id="timeHours">载入时...</span></number><span> 小时 </span>
+	<number><span id="timeMinutes">载入分...</span></number><span> 分 </span>
+	<number><span id="timeSeconds">载入秒...</span></number><span> 秒</span>
+	<script>
+    var now = new Date();
+		function createtime() {
+			var grt = new Date("09/13/2021 22:04:30"); //此处修改你的建站时间或者网站上线时间 
+			now.setTime(now.getTime() + 250);
+			days = (now - grt) / 1000 / 60 / 60 / 24;
+			dnum = Math.floor(days);
+			hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+			hnum = Math.floor(hours);
+			if (String(hnum).length == 1) {
+				hnum = "0" + hnum;
+			}
+			minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+			mnum = Math.floor(minutes);
+			if (String(mnum).length == 1) {
+				mnum = "0" + mnum;
+			}
+			seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			snum = Math.round(seconds);
+			if (String(snum).length == 1) {
+				snum = "0" + snum;
+			}
+			document.getElementById("timeDate").innerHTML = dnum;
+			document.getElementById("timeHours").innerHTML = hnum;
+			document.getElementById("timeMinutes").innerHTML = mnum;
+			document.getElementById("timeSeconds").innerHTML = snum;
+		}
+		setInterval("createtime()", 250);
+	</script>
+	</div>
+    <div class="nexmoe-copyright">
+        &copy; 2021 vikyi
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 56.31944444444444%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg" data-sizes="auto" alt="网络编程学习记录" class="lazyload">
+              <h1>网络编程学习记录</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月09日</a>
+    <a><i class="nexmoefont icon-areachart"></i>810 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+</div>
+
+      
+
+      <p>网络编程的学习记录</p>
+<span id="more"></span>
+<h4 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h4><p>方便对IP地址的获取和操作<br>常用方法：<br>　　<code>static InetAddress getByName(String host)</code>：确定主机名称的IP地址，主机名称可以是机器名称，也可以是IP地址<br>　　<code>String getHostName()</code>：获取此IP地址的主机名<br>　　<code>String getHostAddress()</code>：返回文本显示中的IP地址字符串</p>
+<h4 id="UDP收发数据"><a href="#UDP收发数据" class="headerlink" title="UDP收发数据"></a>UDP收发数据</h4><p>使用DatagramSocket类作为基于UDP协议的Socket<br>发送数据的步骤：</p>
+<ol>
+<li>创建发送端的Socket对象　DatagramSocket()</li>
+<li>创建数据，并把数据打包　DatagramPacket(byte[] buf, int length, InetAddress address, int port)</li>
+<li>调用DatagramSocket对象的方法发送数据　void send(DatagramPacket dp)</li>
+<li>关闭发送端　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket ds = <span class="keyword">new</span> DatagramSocket();</span><br><span class="line"><span class="keyword">byte</span>[] bys= <span class="string">&quot;发送测试&quot;</span>.getBytes();</span><br><span class="line">DatagramPacket dp = <span class="keyword">new</span> DatagramPacket(bys,bys.length,InetAddress.getByName(<span class="string">&quot;Shelter&quot;</span>),<span class="number">55608</span>);<span class="comment">// 本机名称</span></span><br><span class="line">ds.send(dp);</span><br><span class="line">ds.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>接收数据的步骤：</p>
+<ol>
+<li>创建接收端的Socket对象　DatagramSocket(int port)</li>
+<li>创建一个数据包，用于接收数据　DatagramPacket(byte[] buf, int length)</li>
+<li>调用DatagramSocket对象的方法接收数据　void receive(DatagramPacket dp)</li>
+<li>解析数据包，并把数据在控制台显示　byte[] getData() //返回数据缓冲区，<font color=#FF000>注意，初始化的byte[]数组多余字符会设置为空，记得转换成String的时候用dp.getLength()控制输出长度</font></li>
+<li>关闭接收端　　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket ds = <span class="keyword">new</span> DatagramSocket(<span class="number">55608</span>);</span><br><span class="line"><span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">DatagramPacket dp = <span class="keyword">new</span> DatagramPacket(bys, bys.length);</span><br><span class="line">ds.receive(dp);</span><br><span class="line"><span class="keyword">byte</span>[] data = dp.getData();</span><br><span class="line"><span class="keyword">int</span> len = dp.getLength();</span><br><span class="line">String dataString = <span class="keyword">new</span> String(data, <span class="number">0</span>, len);</span><br><span class="line">System.out.println(<span class="string">&quot;数据是：&quot;</span> + dataString); <span class="comment">// 数据是：发送测试</span></span><br><span class="line">ds.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="TCP收发数据"><a href="#TCP收发数据" class="headerlink" title="TCP收发数据"></a>TCP收发数据</h4><p>客户端使用Socket类，服务器端使用ServerSocket类，TCP是可靠连接，必须先启动服务器端接收，再启动客户端发送<br>发送数据的步骤：</p>
+<ol>
+<li>创建客户端的Socket对象　Socket(InetAddress address, int port)</li>
+<li>获取输出流，写数据　OutputStream getOutputStream() // 返回此套接字的输出流</li>
+<li>释放资源　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Socket s = <span class="keyword">new</span> Socket(InetAddress.getByName(<span class="string">&quot;Shelter&quot;</span>), <span class="number">55608</span>);</span><br><span class="line">OutputStream os = s.getOutputStream();</span><br><span class="line">InputStream is = s.getInputStream();</span><br><span class="line"></span><br><span class="line">os.write(<span class="string">&quot;客户端发送数据&quot;</span>.getBytes());</span><br><span class="line">System.out.println(<span class="string">&quot;客户端已发送数据&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">int</span> len = is.read(bys);</span><br><span class="line">String data = <span class="keyword">new</span> String(bys, <span class="number">0</span>, len);</span><br><span class="line">System.out.println(<span class="string">&quot;客户端接收数据：&quot;</span> + data); <span class="comment">// 客户端接收数据：服务器端返回数据</span></span><br><span class="line"></span><br><span class="line">s.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>接收数据的步骤：</p>
+<ol>
+<li>创建服务器端的Socket对象　ServerSocket(int port)</li>
+<li>获取输入流，读数据，并把数据显示在控制台　Socket accept() // 侦听此套接字并接受它　InputStream getInputStream() // 返回此套接字的输入流<br><font color=#FF0000>注意：接收数据时如果循环接收，需要一个结束标记符代表数据已全部接收，此时有两种解决方法，1.自定义结束标记符，约定如接收到此标记则结束接收；2.发送端使用shutdownOutput()方法，关闭套接字的输出流，从而使TCP终止一次序列</font></li>
+<li>释放资源　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ServerSocket ss = <span class="keyword">new</span> ServerSocket(<span class="number">55608</span>);</span><br><span class="line">Socket s = ss.accept();</span><br><span class="line">InputStream is = s.getInputStream();</span><br><span class="line">OutputStream os = s.getOutputStream();</span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">int</span> len = is.read(bys);</span><br><span class="line">String data = <span class="keyword">new</span> String(bys, <span class="number">0</span>, len);</span><br><span class="line">System.out.println(<span class="string">&quot;服务器端接收数据：&quot;</span> + data); <span class="comment">// 服务器端接收数据：客户端发送数据</span></span><br><span class="line"><span class="keyword">if</span>(!data.equals(<span class="keyword">null</span>)) &#123;</span><br><span class="line">    os.write(<span class="string">&quot;服务器端返回数据&quot;</span>.getBytes());</span><br><span class="line">    System.out.println(<span class="string">&quot;服务器端已返回数据&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">ss.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>vikyi<br>
+        <strong>本文链接：</strong><a href="https://vikyi.github.io/2021/11/9/net/" title="https:&#x2F;&#x2F;vikyi.github.io&#x2F;2021&#x2F;11&#x2F;9&#x2F;net&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;vikyi.github.io&#x2F;2021&#x2F;11&#x2F;9&#x2F;net&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/Java/">Java</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">基础学习</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1637575866710"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>
