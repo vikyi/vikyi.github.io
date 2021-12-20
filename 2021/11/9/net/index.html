@@ -26,9 +26,9 @@
 <meta property="article:tag" content="基础学习">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1639393599330">
+    <link rel="stylesheet" href="/css/style.css?v=1639991846371">
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1639393599330">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1639991846371">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -52,7 +52,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>10</div>
+        <div><span>文章</span>11</div>
         <div><span>标签</span>3</div>
         <div><span>分类</span>3</div>
     </div>
@@ -101,7 +101,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/Java/">Java</a>
-          <span class="category-list-count">7</span>
+          <span class="category-list-count">8</span>
         </li>
 
         
@@ -130,7 +130,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -212,7 +212,7 @@
 <li>创建发送端的Socket对象　DatagramSocket()</li>
 <li>创建数据，并把数据打包　DatagramPacket(byte[] buf, int length, InetAddress address, int port)</li>
 <li>调用DatagramSocket对象的方法发送数据　void send(DatagramPacket dp)</li>
-<li>关闭发送端　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket ds = <span class="keyword">new</span> DatagramSocket();</span><br><span class="line"><span class="keyword">byte</span>[] bys= <span class="string">&quot;发送测试&quot;</span>.getBytes();</span><br><span class="line">DatagramPacket dp = <span class="keyword">new</span> DatagramPacket(bys,bys.length,InetAddress.getByName(<span class="string">&quot;Shelter&quot;</span>),<span class="number">55608</span>);<span class="comment">// 本机名称</span></span><br><span class="line">ds.send(dp);</span><br><span class="line">ds.close();</span><br></pre></td></tr></table></figure></li>
+<li>关闭发送端　void close()<br>demo：<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">DatagramSocket ds = <span class="hljs-keyword">new</span> DatagramSocket();<br><span class="hljs-keyword">byte</span>[] bys= <span class="hljs-string">&quot;发送测试&quot;</span>.getBytes();<br>DatagramPacket dp = <span class="hljs-keyword">new</span> DatagramPacket(bys,bys.length,InetAddress.getByName(<span class="hljs-string">&quot;Shelter&quot;</span>),<span class="hljs-number">55608</span>);<span class="hljs-comment">// 本机名称</span><br>ds.send(dp);<br>ds.close();<br></code></pre></td></tr></table></figure></li>
 </ol>
 <p>接收数据的步骤：</p>
 <ol>
@@ -220,19 +220,19 @@
 <li>创建一个数据包，用于接收数据　DatagramPacket(byte[] buf, int length)</li>
 <li>调用DatagramSocket对象的方法接收数据　void receive(DatagramPacket dp)</li>
 <li>解析数据包，并把数据在控制台显示　byte[] getData() //返回数据缓冲区，<font color=#FF000>注意，初始化的byte[]数组多余字符会设置为空，记得转换成String的时候用dp.getLength()控制输出长度</font></li>
-<li>关闭接收端　　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket ds = <span class="keyword">new</span> DatagramSocket(<span class="number">55608</span>);</span><br><span class="line"><span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">DatagramPacket dp = <span class="keyword">new</span> DatagramPacket(bys, bys.length);</span><br><span class="line">ds.receive(dp);</span><br><span class="line"><span class="keyword">byte</span>[] data = dp.getData();</span><br><span class="line"><span class="keyword">int</span> len = dp.getLength();</span><br><span class="line">String dataString = <span class="keyword">new</span> String(data, <span class="number">0</span>, len);</span><br><span class="line">System.out.println(<span class="string">&quot;数据是：&quot;</span> + dataString); <span class="comment">// 数据是：发送测试</span></span><br><span class="line">ds.close();</span><br></pre></td></tr></table></figure></li>
+<li>关闭接收端　　void close()<br>demo：<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">DatagramSocket ds = <span class="hljs-keyword">new</span> DatagramSocket(<span class="hljs-number">55608</span>);<br><span class="hljs-keyword">byte</span>[] bys = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];<br>DatagramPacket dp = <span class="hljs-keyword">new</span> DatagramPacket(bys, bys.length);<br>ds.receive(dp);<br><span class="hljs-keyword">byte</span>[] data = dp.getData();<br><span class="hljs-keyword">int</span> len = dp.getLength();<br>String dataString = <span class="hljs-keyword">new</span> String(data, <span class="hljs-number">0</span>, len);<br>System.out.println(<span class="hljs-string">&quot;数据是：&quot;</span> + dataString); <span class="hljs-comment">// 数据是：发送测试</span><br>ds.close();<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="TCP收发数据"><a href="#TCP收发数据" class="headerlink" title="TCP收发数据"></a>TCP收发数据</h4><p>客户端使用Socket类，服务器端使用ServerSocket类，TCP是可靠连接，必须先启动服务器端接收，再启动客户端发送<br>发送数据的步骤：</p>
 <ol>
 <li>创建客户端的Socket对象　Socket(InetAddress address, int port)</li>
 <li>获取输出流，写数据　OutputStream getOutputStream() // 返回此套接字的输出流</li>
-<li>释放资源　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Socket s = <span class="keyword">new</span> Socket(InetAddress.getByName(<span class="string">&quot;Shelter&quot;</span>), <span class="number">55608</span>);</span><br><span class="line">OutputStream os = s.getOutputStream();</span><br><span class="line">InputStream is = s.getInputStream();</span><br><span class="line"></span><br><span class="line">os.write(<span class="string">&quot;客户端发送数据&quot;</span>.getBytes());</span><br><span class="line">System.out.println(<span class="string">&quot;客户端已发送数据&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">int</span> len = is.read(bys);</span><br><span class="line">String data = <span class="keyword">new</span> String(bys, <span class="number">0</span>, len);</span><br><span class="line">System.out.println(<span class="string">&quot;客户端接收数据：&quot;</span> + data); <span class="comment">// 客户端接收数据：服务器端返回数据</span></span><br><span class="line"></span><br><span class="line">s.close();</span><br></pre></td></tr></table></figure></li>
+<li>释放资源　void close()<br>demo：<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">Socket s = <span class="hljs-keyword">new</span> Socket(InetAddress.getByName(<span class="hljs-string">&quot;Shelter&quot;</span>), <span class="hljs-number">55608</span>);<br>OutputStream os = s.getOutputStream();<br>InputStream is = s.getInputStream();<br><br>os.write(<span class="hljs-string">&quot;客户端发送数据&quot;</span>.getBytes());<br>System.out.println(<span class="hljs-string">&quot;客户端已发送数据&quot;</span>);<br><br><span class="hljs-keyword">byte</span>[] bys = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];<br><span class="hljs-keyword">int</span> len = is.read(bys);<br>String data = <span class="hljs-keyword">new</span> String(bys, <span class="hljs-number">0</span>, len);<br>System.out.println(<span class="hljs-string">&quot;客户端接收数据：&quot;</span> + data); <span class="hljs-comment">// 客户端接收数据：服务器端返回数据</span><br><br>s.close();<br></code></pre></td></tr></table></figure></li>
 </ol>
 <p>接收数据的步骤：</p>
 <ol>
 <li>创建服务器端的Socket对象　ServerSocket(int port)</li>
 <li>获取输入流，读数据，并把数据显示在控制台　Socket accept() // 侦听此套接字并接受它　InputStream getInputStream() // 返回此套接字的输入流<br><font color=#FF0000>注意：接收数据时如果循环接收，需要一个结束标记符代表数据已全部接收，此时有两种解决方法，1.自定义结束标记符，约定如接收到此标记则结束接收；2.发送端使用shutdownOutput()方法，关闭套接字的输出流，从而使TCP终止一次序列</font></li>
-<li>释放资源　void close()<br>demo：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ServerSocket ss = <span class="keyword">new</span> ServerSocket(<span class="number">55608</span>);</span><br><span class="line">Socket s = ss.accept();</span><br><span class="line">InputStream is = s.getInputStream();</span><br><span class="line">OutputStream os = s.getOutputStream();</span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">int</span> len = is.read(bys);</span><br><span class="line">String data = <span class="keyword">new</span> String(bys, <span class="number">0</span>, len);</span><br><span class="line">System.out.println(<span class="string">&quot;服务器端接收数据：&quot;</span> + data); <span class="comment">// 服务器端接收数据：客户端发送数据</span></span><br><span class="line"><span class="keyword">if</span>(!data.equals(<span class="keyword">null</span>)) &#123;</span><br><span class="line">    os.write(<span class="string">&quot;服务器端返回数据&quot;</span>.getBytes());</span><br><span class="line">    System.out.println(<span class="string">&quot;服务器端已返回数据&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">ss.close();</span><br></pre></td></tr></table></figure></li>
+<li>释放资源　void close()<br>demo：<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">ServerSocket ss = <span class="hljs-keyword">new</span> ServerSocket(<span class="hljs-number">55608</span>);<br>Socket s = ss.accept();<br>InputStream is = s.getInputStream();<br>OutputStream os = s.getOutputStream();<br><br><span class="hljs-keyword">byte</span>[] bys = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];<br><span class="hljs-keyword">int</span> len = is.read(bys);<br>String data = <span class="hljs-keyword">new</span> String(bys, <span class="hljs-number">0</span>, len);<br>System.out.println(<span class="hljs-string">&quot;服务器端接收数据：&quot;</span> + data); <span class="hljs-comment">// 服务器端接收数据：客户端发送数据</span><br><span class="hljs-keyword">if</span>(!data.equals(<span class="hljs-keyword">null</span>)) &#123;<br>    os.write(<span class="hljs-string">&quot;服务器端返回数据&quot;</span>.getBytes());<br>    System.out.println(<span class="hljs-string">&quot;服务器端已返回数据&quot;</span>);<br>&#125;<br>ss.close();<br></code></pre></td></tr></table></figure></li>
 </ol>
 
   </article>
@@ -283,7 +283,7 @@
 
  
 
-<script async src="/js/app.js?v=1639393599333"></script>
+<script async src="/js/app.js?v=1639991846372"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>

@@ -26,9 +26,9 @@
 <meta property="article:tag" content="基础学习">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1639393599338">
+    <link rel="stylesheet" href="/css/style.css?v=1639991846377">
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1639393599338">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1639991846377">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -52,7 +52,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>10</div>
+        <div><span>文章</span>11</div>
         <div><span>标签</span>3</div>
         <div><span>分类</span>3</div>
     </div>
@@ -101,7 +101,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/Java/">Java</a>
-          <span class="category-list-count">7</span>
+          <span class="category-list-count">8</span>
         </li>
 
         
@@ -130,7 +130,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -253,7 +253,7 @@
 <p><font color=#FF0000>JDK7的改进方案：</font>try(括号中直接定义流对象)，不需要finally中手动关闭流了<br><font color=#FF0000>JDK9的改进方案：</font>try-catch前直接定义流对象，try(输入流对象；输出流对象)，依旧不需要手动关闭流</p>
 <h4 id="输入字节流"><a href="#输入字节流" class="headerlink" title="输入字节流"></a>输入字节流</h4><p>输入字节流的构造（同输出流）：<br>　　<code>FileInputStream(String name)</code>：创建文件输出流以指定的名称写入文件<br>　　<code>FileInputStream(File file)</code>：创建文件输出流以指定的抽象路径名写入文件</p>
 <p>字节流读方法：<br>　　<code>int read()</code>：从该输入流中读取一个字节数据，int类型表示该数据的ASCII码，可以用(char)强制类型转换，如果达到文件的末尾，会返回-1<br>　　因此，可以用while循环判断读数据是否为-1遍历读文件<br>　　<code>int read(byte[] b)</code>：从该输入流中读取最多b.length个字节的数据到一个字节数组，如最后没有那么多字节，则返回读到的字节数，换行符占两个字节<br>　　<code>int read(byte[] b, int off, int len)</code>：从该输入流中读取最多len个字节的数据到字节数组<br>demo：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">文件内容：</span></span><br><span class="line"><span class="comment">abcde（换行）</span></span><br><span class="line"><span class="comment">abcde（换行）</span></span><br><span class="line"><span class="comment">abcde（换行）</span></span><br><span class="line"><span class="comment">（空行）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line"><span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"><span class="keyword">while</span> ((len = fis.read(b)) != -<span class="number">1</span>) &#123;</span><br><span class="line">    System.out.println(<span class="keyword">new</span> String(b, <span class="number">0</span>, len));<span class="comment">//这里可以写一个写入操作用来实现文件复制等处理</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">如果要按字节读的话</span></span><br><span class="line"><span class="comment">while ((len = fis.read()) != -1) &#123;</span></span><br><span class="line"><span class="comment">    System.out.println(len);</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line">fis.close();</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出（最后一行是换行得到的空行）：</span></span><br><span class="line"><span class="comment">abcde</span></span><br><span class="line"><span class="comment">abcde</span></span><br><span class="line"><span class="comment">abcde</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">--------</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;test.txt&quot;</span>);<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">文件内容：</span><br><span class="hljs-comment">abcde（换行）</span><br><span class="hljs-comment">abcde（换行）</span><br><span class="hljs-comment">abcde（换行）</span><br><span class="hljs-comment">（空行）</span><br><span class="hljs-comment"> */</span><br>FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(file);<br><span class="hljs-keyword">byte</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];<br><span class="hljs-keyword">int</span> len;<br><span class="hljs-keyword">while</span> ((len = fis.read(b)) != -<span class="hljs-number">1</span>) &#123;<br>    System.out.println(<span class="hljs-keyword">new</span> String(b, <span class="hljs-number">0</span>, len));<span class="hljs-comment">//这里可以写一个写入操作用来实现文件复制等处理</span><br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">如果要按字节读的话</span><br><span class="hljs-comment">while ((len = fis.read()) != -1) &#123;</span><br><span class="hljs-comment">    System.out.println(len);</span><br><span class="hljs-comment">&#125;</span><br><span class="hljs-comment"> */</span><br>System.out.println(<span class="hljs-string">&quot;--------&quot;</span>);<br>fis.close();<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">输出（最后一行是换行得到的空行）：</span><br><span class="hljs-comment">abcde</span><br><span class="hljs-comment">abcde</span><br><span class="hljs-comment">abcde</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">--------</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="字节缓冲流"><a href="#字节缓冲流" class="headerlink" title="字节缓冲流"></a>字节缓冲流</h3><ul>
 <li>BufferedOutputStream：缓冲输出流，优点：应用程序可以向底层输出流写入字节，不必因为每个写入的字节导致底层系统的调用</li>
@@ -369,7 +369,7 @@
 
  
 
-<script async src="/js/app.js?v=1639393599339"></script>
+<script async src="/js/app.js?v=1639991846378"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
