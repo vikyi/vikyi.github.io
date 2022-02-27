@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>Swagger学习记录 - vikyi&#39;s shelter</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Swagger的学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swagger学习记录">
+<meta property="og:url" content="https://vikyi.github.io/2022/2/27/swagger/index.html">
+<meta property="og:site_name" content="vikyi&#39;s shelter">
+<meta property="og:description" content="Swagger的学习记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-27T13:08:54.000Z">
+<meta property="article:modified_time" content="2022-02-27T13:10:42.792Z">
+<meta property="article:author" content="vikyi">
+<meta property="article:tag" content="基础学习">
+<meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=1645967496846">
+    
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1645967496846">
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="vikyi" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="vikyi">
+            <img src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/avatar.jpg" alt="vikyi" alt="vikyi">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>12</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/3838237" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/%E5%90%B9%E6%B0%B4/" style="font-size: 10px;">吹水</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">基础学习</a> <a href="/tags/%E7%88%B1%E5%A5%BD/" style="font-size: 10px;">爱好</a>
+    </div>
+    
+  </div>
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Java/">Java</a>
+          <span class="category-list-count">9</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/正确的废话/">正确的废话</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/音视频处理/">音视频处理</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+</aside>
+	<div class="nexmoe-time">
+	<span>本站于 2021 年 9 月 13 日创建</span>
+	<br>
+	<br>
+	<span>已运行 </span><number><span id="timeDate">载入天数...</span></number><span> 天 </span>
+	<number><span id="timeHours">载入时...</span></number><span> 小时 </span>
+	<number><span id="timeMinutes">载入分...</span></number><span> 分 </span>
+	<number><span id="timeSeconds">载入秒...</span></number><span> 秒</span>
+	<script>
+    var now = new Date();
+		function createtime() {
+			var grt = new Date("09/13/2021 22:04:30"); //此处修改你的建站时间或者网站上线时间 
+			now.setTime(now.getTime() + 250);
+			days = (now - grt) / 1000 / 60 / 60 / 24;
+			dnum = Math.floor(days);
+			hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+			hnum = Math.floor(hours);
+			if (String(hnum).length == 1) {
+				hnum = "0" + hnum;
+			}
+			minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+			mnum = Math.floor(minutes);
+			if (String(mnum).length == 1) {
+				mnum = "0" + mnum;
+			}
+			seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			snum = Math.round(seconds);
+			if (String(snum).length == 1) {
+				snum = "0" + snum;
+			}
+			document.getElementById("timeDate").innerHTML = dnum;
+			document.getElementById("timeHours").innerHTML = hnum;
+			document.getElementById("timeMinutes").innerHTML = mnum;
+			document.getElementById("timeSeconds").innerHTML = snum;
+		}
+		setInterval("createtime()", 250);
+	</script>
+	</div>
+    <div class="nexmoe-copyright">
+        &copy; 2022 vikyi
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 56.31944444444444%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/vikyi/vikyi.github.io@master/BG.jpg" data-sizes="auto" alt="Swagger学习记录" class="lazyload">
+              <h1>Swagger学习记录</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年02月27日</a>
+    <a><i class="nexmoefont icon-areachart"></i>765 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+</div>
+
+      
+
+      <p>Swagger的学习记录</p>
+<span id="more"></span>
+
+<h3 id="1-引入POM依赖"><a href="#1-引入POM依赖" class="headerlink" title="1. 引入POM依赖"></a>1. 引入POM依赖</h3><figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- Swagger3只用导入这一个依赖就行了 --&gt;</span><br><span class="hljs-comment">&lt;!-- 使用Swagger必须使用最高2.5.6的Springboot版本 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>io.springfox<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>springfox-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-新建一个Config类"><a href="#2-新建一个Config类" class="headerlink" title="2. 新建一个Config类"></a>2. 新建一个Config类</h3><p>使用<code>@Configuration</code>和<code>@EnableOpenApi</code>注解，此时类中什么都不写即可运行项目测试Swagger的使用了，地址为：<code>http://localhost:XXXX/swagger-ui/index.html#/</code>或<br><code>http://localhost:XXXX/swagger-ui/</code></p>
+<h3 id="3-配置Swagger"><a href="#3-配置Swagger" class="headerlink" title="3. 配置Swagger"></a>3. 配置Swagger</h3><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-meta">@EnableOpenApi</span> <span class="hljs-comment">//Swagger3</span><br><span class="hljs-comment">//如果用2就是 @EnabbleSwagger2</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SwaggerConfig</span> </span>&#123;<br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Docket <span class="hljs-title">docket</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Docket(DocumentationType.OAS_30)<br>                .apiInfo(apiInfo())<br>                .select()<br>                <span class="hljs-comment">/**</span><br><span class="hljs-comment">                RequestHandlerSelectors：配置要扫描接口的方式</span><br><span class="hljs-comment">                basePackage：指定要扫描的包</span><br><span class="hljs-comment">                any()：扫描全部</span><br><span class="hljs-comment">                none()：不扫描</span><br><span class="hljs-comment">                withClassAnnotation：扫描类上的注解</span><br><span class="hljs-comment">                withMethodAnnotation：扫描方法上的注解</span><br><span class="hljs-comment">                **/</span><br>                .apis(RequestHandlerSelectors<br>                        .basePackage(<span class="hljs-string">&quot;com.vikyi.controller&quot;</span>))<br>                <span class="hljs-comment">/*</span><br><span class="hljs-comment">                .apis(RequestHandlerSelectors.</span><br><span class="hljs-comment">                        withMethodAnnotation(ApiOperation.class))</span><br><span class="hljs-comment">                .apis(RequestHandlerSelectors.</span><br><span class="hljs-comment">                        withClassAnnotation(RestController.class))</span><br><span class="hljs-comment">                */</span><br>                <span class="hljs-comment">//path()：过滤的路径</span><br>                <span class="hljs-comment">//.path(PathSelectors.ant(&quot;/xxx/*&quot;))</span><br>                .build();<br>    &#125;<br><br>    <span class="hljs-comment">//使用ApiInfoBuilder对象的build方法创建ApiInfo，只会将要写的字段写入，否则为null，推荐使用</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> ApiInfo <span class="hljs-title">apiInfo</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ApiInfoBuilder()<br>                <span class="hljs-comment">//文档页标题</span><br>                .title(<span class="hljs-string">&quot;Swagger试用&quot;</span>)<br>                <span class="hljs-comment">//文档页描述</span><br>                .description(<span class="hljs-string">&quot;Swagger接口文档&quot;</span>)<br>                <span class="hljs-comment">//版本号</span><br>                .version(<span class="hljs-string">&quot;1.0.1&quot;</span>)<br>                <span class="hljs-comment">//网站地址</span><br>                .termsOfServiceUrl(<span class="hljs-string">&quot;&quot;</span>)<br>                <span class="hljs-comment">//联系人信息</span><br>                .contact(<br>                        <span class="hljs-keyword">new</span> Contact(<span class="hljs-string">&quot;vikyi&quot;</span>,<br>                                <span class="hljs-string">&quot;https://vikyi.github.io&quot;</span>,<br>                                <span class="hljs-string">&quot;vikyi@qq.com&quot;</span>))<br>                .build();<br>    &#125;<br>    <br>    <span class="hljs-comment">//另一种使用构造器创建ApiInfo对象的方式，必须每个字段都得填写，不好用</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> ApiInfo <span class="hljs-title">apiInfo2</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ApiInfo(<br>                <span class="hljs-comment">//文档页标题</span><br>                <span class="hljs-string">&quot;未一的SwaggerDemo&quot;</span>,<br>                <span class="hljs-comment">//文档页描述</span><br>                <span class="hljs-string">&quot;Swagger接口文档&quot;</span>,<br>                <span class="hljs-comment">//版本号</span><br>                <span class="hljs-string">&quot;1.0.1&quot;</span>,<br>                <span class="hljs-comment">//网站地址</span><br>                <span class="hljs-string">&quot;&quot;</span>,<br>                <span class="hljs-comment">//联系人信息</span><br>                <span class="hljs-keyword">new</span> Contact(<span class="hljs-string">&quot;vikyi&quot;</span>,<br>                        <span class="hljs-string">&quot;https://vikyi.github.io&quot;</span>,<br>                        <span class="hljs-string">&quot;vikyi@qq.com&quot;</span>),<br>                <span class="hljs-comment">//许可证</span><br>                <span class="hljs-string">&quot;Apache 2.0&quot;</span>,<br>                <span class="hljs-comment">//许可证地址</span><br>                <span class="hljs-string">&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;</span>,<br>                <span class="hljs-comment">//不明所以的vendorExtensions（大致是扩展用，可以在文档页加Logo之类的）</span><br>                <span class="hljs-keyword">new</span> ArrayList());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-Swagger常用注解"><a href="#4-Swagger常用注解" class="headerlink" title="4. Swagger常用注解"></a>4. Swagger常用注解</h3><table>
+<thead>
+<tr>
+<th>OpenApi3</th>
+<th>Swagger2</th>
+<th>注解位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Tag(name = “xxx-controller”, description = “类描述”)</td>
+<td>@Api</td>
+<td>Controller类上</td>
+</tr>
+<tr>
+<td>@Operation(summary = “方法描述”)</td>
+<td>@ApiOperation</td>
+<td>Controller方法上</td>
+</tr>
+<tr>
+<td>@ApiResponses({})</td>
+<td>@ApiResponses</td>
+<td>Controller方法上</td>
+</tr>
+<tr>
+<td>@ApiResponse(responseCode = “”, description = “返回描述”)</td>
+<td>@ApiResponse</td>
+<td>@ApiResponse内</td>
+</tr>
+<tr>
+<td>@Parameter(description = “参数描述”, required = true)</td>
+<td>@ApiParam</td>
+<td>方法中的参数前</td>
+</tr>
+</tbody></table>
+<h3 id="5-与Sa-Token整合时的小问题"><a href="#5-与Sa-Token整合时的小问题" class="headerlink" title="5. 与Sa-Token整合时的小问题"></a>5. 与Sa-Token整合时的小问题</h3><p>Sa-Token有一个登录认证拦截器，可以用来拦截除了自定义以外的所有接口，使这些接口必须登录才能访问，然而，要想使用swagger，必须把Swagger页面也加入自定义列表中，Swagger页面的接口为”/swagger-ui/**“,”/swagger-resources/**“,”/v3/**“,具体代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SaTokenConfig</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">WebMvcConfigurer</span> </span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 注册Sa-Token的注解拦截器，打开注解式鉴权功能</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> registry 注解拦截器</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addInterceptors</span><span class="hljs-params">(InterceptorRegistry registry)</span> </span>&#123;<br>        <span class="hljs-comment">// 注册注解拦截器，并排除不需要注解鉴权的接口地址 (与登录拦截器无关)</span><br>        registry.addInterceptor(<span class="hljs-keyword">new</span> SaAnnotationInterceptor())<br>                .addPathPatterns(<span class="hljs-string">&quot;/login&quot;</span>);<br>        <span class="hljs-comment">// 使用 Sa-Token 路由拦截器</span><br>        <span class="hljs-comment">// 注册登录认证拦截器，并排除登录接口地址</span><br>        registry.addInterceptor(<span class="hljs-keyword">new</span> SaRouteInterceptor())<br>                .addPathPatterns(<span class="hljs-string">&quot;/**&quot;</span>)<br>                .excludePathPatterns(<span class="hljs-string">&quot;/login&quot;</span>,<br>                        <span class="hljs-string">&quot;/swagger-ui/**&quot;</span>,<br>                        <span class="hljs-string">&quot;/swagger-resources/**&quot;</span>,<br>                        <span class="hljs-string">&quot;/v3/**&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>vikyi<br>
+        <strong>本文链接：</strong><a href="https://vikyi.github.io/2022/2/27/swagger/" title="https:&#x2F;&#x2F;vikyi.github.io&#x2F;2022&#x2F;2&#x2F;27&#x2F;swagger&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;vikyi.github.io&#x2F;2022&#x2F;2&#x2F;27&#x2F;swagger&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/Java/">Java</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">基础学习</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+ 
+
+<script async src="/js/app.js?v=1645967496850"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+</body>
+
+</html>
